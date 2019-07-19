@@ -76,7 +76,6 @@ networks-configuration:
       - AZ3
 properties-configuration:
   director_configuration:
-    allow_legacy_agents: true
     blobstore_type: local
     bosh_recreate_on_next_deploy: false
     bosh_recreate_persistent_disks_on_next_deploy: false
@@ -90,42 +89,21 @@ properties-configuration:
     hm_pager_duty_options:
       enabled: false
     identification_tags: {}
+    job_configuration_on_tmpfs: false
     keep_unreachable_vms: false
     local_blobstore_options:
       tls_enabled: true
     ntp_servers_string: time.svc.pivotal.io
     post_deploy_enabled: false
-    resurrector_enabled: true
-    retry_bosh_deploys: false
-    skip_director_drain: true
+    resurrector_enabled: false
+    retry_bosh_deploys: true
+    skip_director_drain: false
   dns_configuration:
     excluded_recursors: []
     handlers: []
-  iaas_configuration:
-    additional_cloud_properties: {}
-    bosh_disk_path: pcf_disk
-    bosh_template_folder: pcf_templates
-    bosh_vm_folder: pcf_vms
-    datacenter: Datacenter
-    disk_type: thin
-    ephemeral_datastores_string: LUN01
-    guid: fa7e89c5ef5f72b16b8a
-    name: default
-    nsx_address: nsxmgr-01.haas-<num>.pez.pivotal.io
-    nsx_ca_certificate: ((nsx_ca_cert.certificate))
-    nsx_mode: nsx-t
-    nsx_networking_enabled: true
-    nsx_username: admin
-    nsx_password: ((nsx_password))
-    persistent_datastores_string: LUN01
-    ssl_verification_enabled: false
-    vcenter_host: vcsa-01.haas-<num>.pez.pivotal.io
-    vcenter_username: Administrator@vsphere.local
-    vcenter_password: ((vcenter_password))
   security_configuration:
-    trusted_certificates: ((my_ca.certificate))
-    generate_vm_passwords: true
-    opsmanager_root_ca_trusted_certs: true
+    generate_vm_passwords: ((properties-configuration_security_configuration_generate_vm_passwords))
+    opsmanager_root_ca_trusted_certs: false
   syslog_configuration:
     enabled: false
 resource-configuration:
@@ -139,11 +117,6 @@ resource-configuration:
       size_mb: automatic
     instance_type:
       id: automatic
-vmextensions-configuration:
-- name: router-extension
-  cloud_properties:
-    nsxt:
-      lb:
-        server_pools:
-        - name: PAS-GoRouter443ServerPool
-          port: 443
+vmextensions-configuration: []
+vmtypes-configuration: {}
+
