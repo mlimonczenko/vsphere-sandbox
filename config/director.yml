@@ -15,8 +15,8 @@ az-configuration:
     resource_pool: pas-az1
   iaas_configuration_guid: 6587f5192c3d993fcec8
 iaas-configurations:
-- additional_cloud_properties: {}
- bosh_disk_path: pcf_disk
+  - additional_cloud_properties: {}
+    bosh_disk_path: pcf_disk
     bosh_template_folder: pcf_templates
     bosh_vm_folder: pcf_vms
     datacenter: Datacenter
