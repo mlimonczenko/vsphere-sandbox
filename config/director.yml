@@ -111,7 +111,7 @@ properties-configuration:
     ephemeral_datastores_string: LUN01
     guid: fa7e89c5ef5f72b16b8a
     name: default
-    nsx_address: nsxmgr-01.haas-<num>.pez.pivotal.io
+    nsx_address: nsxmgr-01.haas-207.pez.pivotal.io
     nsx_ca_certificate: ((nsx_ca_cert.certificate))
     nsx_mode: nsx-t
     nsx_networking_enabled: true
@@ -119,7 +119,7 @@ properties-configuration:
     nsx_password: ((nsx_password))
     persistent_datastores_string: LUN01
     ssl_verification_enabled: false
-    vcenter_host: vcsa-01.haas-<num>.pez.pivotal.io
+    vcenter_host: vcsa-01.haas-207.pez.pivotal.io
     vcenter_username: Administrator@vsphere.local
     vcenter_password: ((vcenter_password))
   security_configuration:
