@@ -105,7 +105,7 @@ properties-configuration:
     excluded_recursors: []
     handlers: []
   iaas_configuration:
-    additional_cloud_properties: {}
+  - additional_cloud_properties: {}
     bosh_disk_path: pcf_disk
     bosh_template_folder: pcf_templates
     bosh_vm_folder: pcf_vms
