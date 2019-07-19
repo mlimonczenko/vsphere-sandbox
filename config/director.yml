@@ -16,22 +16,25 @@ az-configuration:
   iaas_configuration_guid: 6587f5192c3d993fcec8
 iaas-configurations:
 - additional_cloud_properties: {}
-  bosh_disk_path: ((iaas-configurations_0_bosh_disk_path))
-  bosh_template_folder: ((iaas-configurations_0_bosh_template_folder))
-  bosh_vm_folder: ((iaas-configurations_0_bosh_vm_folder))
-  datacenter: ((iaas-configurations_0_datacenter))
-  disk_type: ((iaas-configurations_0_disk_type))
-  ephemeral_datastores_string: ((iaas-configurations_0_ephemeral_datastores_string))
-  name: ((iaas-configurations_0_name))
-  nsx_address: ((iaas-configurations_0_nsx_address))
-  nsx_ca_certificate: ((iaas-configurations_0_nsx_ca_certificate))
-  nsx_mode: ((iaas-configurations_0_nsx_mode))
-  nsx_networking_enabled: ((iaas-configurations_0_nsx_networking_enabled))
-  nsx_username: ((iaas-configurations_0_nsx_username))
-  persistent_datastores_string: ((iaas-configurations_0_persistent_datastores_string))
-  ssl_verification_enabled: ((iaas-configurations_0_ssl_verification_enabled))
-  vcenter_host: ((iaas-configurations_0_vcenter_host))
-  vcenter_username: ((iaas-configurations_0_vcenter_username))
+ bosh_disk_path: pcf_disk
+    bosh_template_folder: pcf_templates
+    bosh_vm_folder: pcf_vms
+    datacenter: Datacenter
+    disk_type: thin
+    ephemeral_datastores_string: LUN01
+    guid: fa7e89c5ef5f72b16b8a
+    name: default
+    nsx_address: nsxmgr-01.haas-207.pez.pivotal.io
+    nsx_ca_certificate: ((nsx_ca_cert.certificate))
+    nsx_mode: nsx-t
+    nsx_networking_enabled: true
+    nsx_username: admin
+    nsx_password: ((nsx_password))
+    persistent_datastores_string: LUN01
+    ssl_verification_enabled: false
+    vcenter_host: vcsa-01.haas-207.pez.pivotal.io
+    vcenter_username: Administrator@vsphere.local
+    vcenter_password: ((vcenter_password))
 network-assignment:
   network:
     name: PAS-Infrastructure
